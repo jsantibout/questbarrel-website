@@ -1,26 +1,130 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f4e4bc;
+  --background-alt: #e8d5a3;
+  --foreground: #1a1a1a;
+  --primary: #58180d;
+  --primary-light: #7a2a1a;
+  --accent: #c9ad6a;
+  --accent-dark: #8b4513;
+  --surface: #faf3e0;
+  --surface-dark: #e0d0b0;
+  --muted: #5e4d3b;
+  --border: #c4a56e;
 }
 
 @theme inline {
   --color-background: var(--background);
+  --color-background-alt: var(--background-alt);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-primary: var(--primary);
+  --color-primary-light: var(--primary-light);
+  --color-accent: var(--accent);
+  --color-accent-dark: var(--accent-dark);
+  --color-surface: var(--surface);
+  --color-surface-dark: var(--surface-dark);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --font-sans: var(--font-cormorant), Georgia, serif;
+  --font-heading: var(--font-cinzel), Georgia, serif;
 }
 
 body {
-  background: var(--background);
+  position: relative;
+  min-height: 100vh;
+  background-color: var(--background-alt);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Georgia, serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading), Georgia, serif;
+}
+
+.font-heading {
+  font-family: var(--font-heading), Georgia, serif;
+}
+
+/* Parchment background for main content only (not header/footer) */
+.parchment-main {
+  background-color: var(--background);
+  background-image:
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-blend-mode: overlay;
+  background-attachment: fixed;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Parchment texture for sections */
+.parchment {
+  position: relative;
+  background-color: var(--surface);
+  background-image:
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-blend-mode: overlay;
+}
+
+/* Darker parchment variant */
+.parchment-dark {
+  position: relative;
+  background-color: var(--background-alt);
+  background-image:
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-blend-mode: overlay;
+}
+
+/* Aged paper edge effect */
+.paper-edge {
+  box-shadow:
+    inset 0 0 30px rgba(139, 90, 43, 0.15),
+    0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Decorative border */
+.ornate-border {
+  border: 2px solid var(--border);
+  position: relative;
+}
+
+.ornate-border::before {
+  content: '';
+  position: absolute;
+  inset: 3px;
+  border: 1px solid var(--border);
+  pointer-events: none;
+}
+
+.paper-texture {
+  position: absolute;
+  z-index: -1;
+  display: flex;
+  width: 98%;
+  height: 100%;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50.5%, 0);
+  margin: 0.2em 0;
+  box-shadow:
+      2px 3px 20px black,
+      0 0 60px #8a4d0f inset;
+  background: #fffef0;
+  filter: url(#paper-texture-filter);
+}
+
+.noise {
+  background-image: url("/noise.png");
+  background-repeat: repeat;
+  background-size: 182px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+  opacity: var(--noise-opacity);
 }
