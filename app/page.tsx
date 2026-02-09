@@ -68,7 +68,7 @@ export default function Home() {
             <FeatureCard
               icon="🎤"
               title="Voice Recognition"
-              description="Local Whisper AI transcribes your speech in real-time. No internet required, your data stays on your machine."
+              description="Transcribes your speech in real-time."
             />
             <FeatureCard
               icon="⚔️"
@@ -78,7 +78,7 @@ export default function Home() {
             <FeatureCard
               icon="🎯"
               title="Event Detection"
-              description="18+ event types recognized automatically: attacks, skill checks, death saves, and more."
+              description="Event types recognized automatically: attacks, skill checks, death saves, and more."
             />
             <FeatureCard
               icon="📜"
