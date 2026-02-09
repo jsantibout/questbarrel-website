@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col text-foreground">
@@ -23,6 +25,15 @@ export default function Home() {
       {/* Hero Section */}
       <section className="pt-28 pb-20 px-6 md:pt-32">
         <div className="max-w-6xl mx-auto text-center">
+          <Image
+            // src="/images/NimbusQuill_F4E4BC_background.png"
+            src="/images/NimbusQuill_transparent.png"
+            alt="Nimbus Quill"
+            width={800}
+            height={600}
+            className="mx-auto mb-8"
+            priority
+          />
           <div className="inline-block mb-6 px-4 py-2 parchment-dark rounded border-2 border-border">
             <span className="text-primary font-medium">Voice-Powered D&D Tracking</span>
           </div>
@@ -65,11 +76,6 @@ export default function Home() {
               description="Automatic initiative order, enemy HP tracking, damage application, and condition management."
             />
             <FeatureCard
-              icon="✨"
-              title="Spell Detection"
-              description="Recognizes spell names and levels from natural speech. 'I cast healing word' just works."
-            />
-            <FeatureCard
               icon="🎯"
               title="Event Detection"
               description="18+ event types recognized automatically: attacks, skill checks, death saves, and more."
@@ -79,11 +85,7 @@ export default function Home() {
               title="Session Logs"
               description="Every session saved with full transcripts and activity logs. Never forget what happened last week."
             />
-            <FeatureCard
-              icon="🔒"
-              title="Fully Offline"
-              description="Everything runs locally on your computer. No cloud, no subscriptions, no data leaving your machine."
-            />
+            
           </div>
         </div>
       </section>
@@ -131,9 +133,9 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             <PhraseExample phrase="Roll initiative" event="Combat begins, initiative tracker opens" />
             <PhraseExample phrase="Add 3 goblins with 20 HP" event="Enemies added to combat tracker" />
-            <PhraseExample phrase="I attack the orc with advantage" event="Attack logged with advantage" />
+            {/* <PhraseExample phrase="I attack the orc with advantage" event="Attack logged with advantage" /> */}
             <PhraseExample phrase="The dragon takes 45 damage" event="HP updated, damage recorded" />
-            <PhraseExample phrase="I cast shield as a reaction" event="Spell detected and logged" />
+            {/* <PhraseExample phrase="I cast shield as a reaction" event="Spell detected and logged" /> */}
             <PhraseExample phrase="That's a natural 20!" event="Critical hit recorded" />
             <PhraseExample phrase="The fighter is unconscious" event="Condition applied" />
             <PhraseExample phrase="End combat" event="Combat tracker closes, summary saved" />
