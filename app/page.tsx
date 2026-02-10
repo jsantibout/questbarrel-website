@@ -149,11 +149,11 @@ export default function Home() {
           <p className="text-muted text-lg mb-8 max-w-2xl mx-auto">
             Nimbus Quill is currently in development. Stay tuned for release announcements.
           </p>
-          <div className="inline-block parchment paper-edge ornate-border rounded-lg px-8 py-6">
+          {/* <div className="inline-block parchment paper-edge ornate-border rounded-lg px-8 py-6">
             <p className="text-lg text-foreground">
               Built with <span className="text-primary">♥</span> for tabletop adventurers everywhere.
             </p>
-          </div>
+          </div> */}
         </div>
       </section>
         </main>
