@@ -64,7 +64,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto justify-items-center">
             <FeatureCard
               icon="🎤"
               title="Voice Recognition"
@@ -85,7 +85,6 @@ export default function Home() {
               title="Session Logs"
               description="Every session saved with full transcripts and activity logs. Never forget what happened last week."
             />
-            
           </div>
         </div>
       </section>
@@ -178,7 +177,7 @@ export default function Home() {
 
 function FeatureCard({ icon, title, description }: { icon: string; title: string; description: string }) {
   return (
-    <div className="parchment paper-edge ornate-border rounded-lg p-6 hover:border-primary transition-colors">
+    <div className="parchment paper-edge ornate-border rounded-lg p-6 hover:border-primary transition-colors w-full max-w-sm text-center">
       <div className="text-4xl mb-4">{icon}</div>
       <h3 className="text-xl font-semibold mb-2 text-primary">{title}</h3>
       <p className="text-muted">{description}</p>
