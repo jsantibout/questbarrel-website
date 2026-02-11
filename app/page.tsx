@@ -4,19 +4,7 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col text-foreground">
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-background-alt backdrop-blur-sm border-b-2 border-border">
-        <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <span className="text-2xl">🪶</span>
-            <span className="text-xl font-semibold text-primary font-heading">Nimbus Quill</span>
-          </div>
-          <div className="flex items-center gap-6">
-            <a href="#features" className="text-muted hover:text-primary transition-colors">Features</a>
-            <a href="#how-it-works" className="text-muted hover:text-primary transition-colors">How It Works</a>
-            <a href="#phrases" className="text-muted hover:text-primary transition-colors">Commands</a>
-          </div>
-        </div>
-      </nav>
+      
 
       {/* Main content on parchment - paper effect only covers this area */}
       <div className="relative flex-1 flex flex-col min-h-0">
