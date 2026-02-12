@@ -1,12 +1,12 @@
-"use clinet";
+"use client";
 
 import Image from "next/image"
 import Link from "next/link"
 
 const navLinks = [
-    { href: '/features', label: 'Features'},
-    { href: '/howitworks', label: 'How It Works'},
-    { href: '/commands', label: 'Commands'}
+    { href: '/#features', label: 'Features'},
+    { href: '/#how-it-works', label: 'How It Works'},
+    { href: '/#phrases', label: 'Commands'}
 ]
 
 const Header = () => {
@@ -22,20 +22,26 @@ const Header = () => {
               aria-label="Go to home page"
             >
               <Image 
-                src="Quest_Barrel_logo.png" 
+                src="/images/Quest_Barrel_logo.png" 
                 alt="Nimbus Quill Logo" 
-                className="h-10 w-auto"
-                width={40}
-                height={40}
+                className="h-20 w-20 rounded-full"
+                width={80}
+                height={80}
               />
             </Link>
-              <span className="text-xl font-semibold text-primary font-heading">Nimbus Quill</span>
           </div>
-              <div className="flex items-center gap-6">
-              <a href="#features" className="text-muted hover:text-primary transition-colors">Features</a>
-              <a href="#how-it-works" className="text-muted hover:text-primary transition-colors">How It Works</a>
-              <a href="#phrases" className="text-muted hover:text-primary transition-colors">Commands</a>
-              </div>
+          <div className="hidden md:flex items-center space-x-8">
+            {navLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="text-sm font-montserrat font-semibold uppercase tracking-wide hover:text-gold transition-colors duration-200 relative group"
+              >
+                {link.label}
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gold group-hover:w-full transition-all duration-300"></span>
+              </a>
+            ))}
+          </div>
         </div>
       </nav>
     </header>

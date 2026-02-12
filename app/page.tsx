@@ -1,11 +1,12 @@
 import Image from "next/image";
+import Header from "@/components/Header"
+import Footer from "@/components/Footer"
 
 export default function Home() {
   return (
+    <>
+    <Header/>      
     <div className="min-h-screen flex flex-col text-foreground">
-      {/* Navigation */}
-      
-
       {/* Main content on parchment - paper effect only covers this area */}
       <div className="relative flex-1 flex flex-col min-h-0">
         <div className="paper-texture" />
@@ -43,7 +44,7 @@ export default function Home() {
       </section>
 
       {/* Features Section */}
-      <section id="features" className="py-20 px-6">
+      <section id="features" className="py-20 px-6 scroll-mt-28">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4 text-primary drop-shadow-sm">Everything You Need at the Table</h2>
@@ -78,7 +79,7 @@ export default function Home() {
       </section>
 
       {/* How It Works */}
-      <section id="how-it-works" className="py-20 px-6">
+      <section id="how-it-works" className="py-20 px-6 scroll-mt-28">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4 text-primary drop-shadow-sm">How It Works</h2>
@@ -108,7 +109,7 @@ export default function Home() {
       </section>
 
       {/* Events Section */}
-      <section id="phrases" className="py-20 px-6">
+      <section id="phrases" className="py-20 px-6 scroll-mt-28">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4 text-primary drop-shadow-sm">Speaks Your Language</h2>
@@ -146,20 +147,9 @@ export default function Home() {
       </section>
         </main>
       </div>
-
-      {/* Footer */}
-      <footer className="py-12 px-6 border-t-2 border-border bg-background-alt">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="flex items-center gap-2">
-            <span className="text-2xl">🪶</span>
-            <span className="text-lg font-semibold text-primary font-heading">Nimbus Quill</span>
-          </div>
-          <p className="text-muted text-sm">
-            Built by QuestBarrel
-          </p>
-        </div>
-      </footer>
     </div>
+    <Footer />
+    </>
   );
 }
 
