@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Cinzel, Lora } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 
 const cinzel = Cinzel({
@@ -31,6 +32,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`min-h-screen ${cinzel.variable} ${lora.variable} antialiased`} suppressHydrationWarning>
         {children}
+        <Analytics />
         <svg aria-hidden="true">
           <filter id="paper-texture-filter">
             <feTurbulence
