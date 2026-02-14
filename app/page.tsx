@@ -36,10 +36,10 @@ export default function Home() {
             to automatically detect and log combat, damage, spells, and more from natural speech.
           </p>
           <a
-            href="#how-it-works"
-            className="inline-block border-2 border-primary hover:bg-primary hover:text-surface text-primary px-8 py-4 rounded text-lg font-semibold transition-colors"
+            href="#contact"
+            className="inline-block border-2 border-primary bg-primary text-surface hover:bg-transparent hover:text-primary px-8 py-4 rounded text-lg font-semibold transition-colors"
           >
-            Learn More
+            Keep Up to Date
           </a>
         </div>
       </section>
