@@ -48,7 +48,6 @@ export default function RootLayout({
             />
           </filter>
         </svg>
-        {/* <div className="noise" /> */}
       </body>
     </html>
   );

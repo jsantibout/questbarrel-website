@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Header from "@/components/Header"
 import Footer from "@/components/Footer"
+import ContactForm from "@/components/ContactForm"
 
 export default function Home() {
   return (
@@ -138,11 +139,19 @@ export default function Home() {
           <p className="text-muted text-lg mb-8 max-w-2xl mx-auto">
             Nimbus Quill is currently in development. Stay tuned for release announcements.
           </p>
-          {/* <div className="inline-block parchment paper-edge ornate-border rounded-lg px-8 py-6">
-            <p className="text-lg text-foreground">
-              Built with <span className="text-primary">♥</span> for tabletop adventurers everywhere.
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="py-20 px-6 scroll-mt-28">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold mb-4 text-primary drop-shadow-sm">Contact Us</h2>
+            <p className="text-muted text-lg max-w-2xl mx-auto">
+              Have questions or want to be notified when we launch? Drop us a message.
             </p>
-          </div> */}
+          </div>
+          <ContactForm />
         </div>
       </section>
         </main>
