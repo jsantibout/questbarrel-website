@@ -118,17 +118,22 @@ html {
   display: flex;
   inset: 0;
   margin: 0;
+  background: #fefef0;
+  /* Enhanced shadows for aged paper effect - works on all browsers including iOS */
   box-shadow:
       2px 3px 20px black,
-      0 0 60px #8a4d0f inset;
-  background: #fefef0;
+      0 0 80px #8a4d0f inset,
+      0 0 150px rgba(139, 77, 15, 0.4) inset,
+      0 0 40px rgba(90, 50, 10, 0.3) inset,
+      inset 0 -20px 60px rgba(139, 77, 15, 0.2),
+      inset 0 20px 60px rgba(139, 77, 15, 0.2),
+      inset 20px 0 60px rgba(139, 77, 15, 0.15),
+      inset -20px 0 60px rgba(139, 77, 15, 0.15);
 }
 
-/* Apply SVG filter only on browsers that support it well (not iOS Safari) */
-@supports not (-webkit-touch-callout: none) {
-  .paper-texture {
-    filter: url(#paper-texture-filter);
-  }
+/* Apply SVG filter only on browsers that support it well (not Safari) */
+html.supports-svg-filters .paper-texture {
+  filter: url(#paper-texture-filter);
 }
 
 .noise {
